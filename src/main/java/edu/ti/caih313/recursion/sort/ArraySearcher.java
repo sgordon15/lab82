@@ -35,8 +35,7 @@ public class ArraySearcher {
                 result = mid;
             } else if (target < a[mid]) {
                 result = binarySearch(target, first, mid - 1);
-            } else {
-                 //(target > a[mid])
+            } else { //(target > a[mid])
                 result = binarySearch(target, mid + 1, last);
             }
         }

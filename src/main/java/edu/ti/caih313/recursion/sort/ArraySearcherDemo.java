@@ -9,6 +9,7 @@ public class ArraySearcherDemo {
         System.out.println("Enter 10 integers in increasing order,");
         System.out.println("one per line.");
         for (int i = 0; i < 10; i++) {
+            System.out.print("Element " + i + ": ");
             anArray[i] = keyboard.nextInt();
         }
         System.out.println();
