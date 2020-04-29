@@ -7,12 +7,12 @@ public class MergeSortDemo {
         for (int i = 0; i < anArray.length; i++) {
             System.out.print(anArray[i] + " ");
         }
-        System.out.println();
-        MergeSort.sort(anArray);
+        System.out.println("Initial call to sort from MergeSortDemo.main");
+        MergeSort.sort(anArray, "> ");
         System.out.println("Array values after sorting:");
         for (int i = 0; i < anArray.length; i++) {
             System.out.print(anArray[i] + " ");
         }
-        System.out.println();
+        System.out.println("Exiting MergeSortDemo.main");
     }
 }

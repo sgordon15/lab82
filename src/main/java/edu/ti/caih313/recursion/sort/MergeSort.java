@@ -9,17 +9,19 @@ public class MergeSort {
      * Precondition: Every indexed variable of the array a has a value.
      * Postcondition: a[0] <= a[1] <= ... <= a[a.length - 1].
      */
-    public static void sort(int[] a) {
+    public static void sort(int[] a, String prefix) {
+        System.out.println(prefix + "Entering sort(a.length=" + a.length);
         //if a.length == 1, a is sorted.
         if (a.length >= 2) {
             int halfLength = a.length / 2;
             int[] firstHalf = new int[halfLength];
             int[] lastHalf = new int[a.length - halfLength];
             divide(a, firstHalf, lastHalf);
-            sort(firstHalf);
-            sort(lastHalf);
+            sort(firstHalf, "-"+prefix);
+            sort(lastHalf, "-"+prefix);
             merge(a, firstHalf, lastHalf);
         }
+        System.out.println(prefix + "Exiting sort(a.length=" + a.length);
     }
 
     //Precondition: a.length = firstHalf.length + lastHalf.length.
