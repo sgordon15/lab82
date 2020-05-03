@@ -15,15 +15,16 @@ public class TenToTheN {
         }
 
         BigInteger tenToNum = tenToTheN(number);
-        System.out.println("10^" + number + " =" + ((fraction)?" 1/":" ") + tenToNum);
+        String formattedTenToNum = TenToTheN.formatBigInteger(tenToNum,"");
+        System.out.println("10^" + number + " =" + ((fraction)?" 1/":" ") + formattedTenToNum);
     }
     static BigInteger ONE_THOUSAND = BigInteger.valueOf(1000);
-     String formatBigInteger(BigInteger val, String suffix){
+     static String formatBigInteger(BigInteger val, String suffix){
          String formattedNumber = suffix;
          if(val.compareTo(ONE_THOUSAND)< 0) {
              formattedNumber = val.toString() + formattedNumber;
          }else {
-             formattedNumber = formatBigInteger((val.divide(ONE_THOUSAND)), "000" + suffix);
+             formattedNumber = formatBigInteger((val.divide(ONE_THOUSAND)), ",000"+ suffix);
          }
          return formattedNumber;
      }
